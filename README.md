@@ -6,7 +6,7 @@
 |group|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group, through: :members
+- belongs_to :group
 - belongs_to :user
 --------------------------------------------------
 
@@ -18,7 +18,7 @@
 |e-mail|string|null: false, unique:true|
 
 ### Association
-- has_many :groups
+- has_many :groups, through: :members
 - has_many :members
 - has_many :messages
 
