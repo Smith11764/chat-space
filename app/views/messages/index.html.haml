@@ -1,0 +1,39 @@
+.wrapper
+  .chat-side
+    .side-header
+      .side-header__box
+        %p.side-header__box__user-name
+          karimen
+        %ul.side-header__box__menu
+          %li.side-header__box__menu__edit-user
+            %a{:href => ""}
+              %i.fa.fa-cog
+          %li.side-header__box__menu__new-group
+            %a{:href => ""}
+              %i.fa.fa-edit
+    .groups
+      .group
+        %p.group__group-name test_group
+        %p.group__latest-message Hi!
+  .chat-main
+    .main-header
+      .main-header__left-contents
+        %h2.main-header__left-contents__group
+          グループA
+        %ul.main-header__left-contents__members
+          Member：
+          %li.member karimen
+      .main-header__right-contents
+        %a{:href => ""}
+          .main-header__right-contents__edit-btn Edit
+    .messages__lists
+      .messages__lists__list
+        %p.messages__lists__list__commenter karimenn
+        %p.messages__lists__list__date 2019/2/20
+        %p.messages__lists__list__message 投稿内容
+    .submit__content
+      .submit__content__new
+        .input-text type a message
+        .input-img
+          %i.fa.fa-image
+      .submit__content__btn Send
