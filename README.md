@@ -2,11 +2,11 @@
 
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|group_id|integer|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|group|references|null: false, foreign_key: true|
 
 ### Association
-- belongs_to :group
+- belongs_to :group, through: :members
 - belongs_to :user
 --------------------------------------------------
 
@@ -30,7 +30,7 @@
 |name|string|index: true, null: false, unique: true|
 
 ### Association
-- has_many :users
+- has_many :users, though: :members
 - has_many :members
 - has_many :messages
 
@@ -41,8 +41,8 @@
 |------|----|-------|
 |sentence|text|null: false|
 |image|string||
-|group_id|integer|foreign_key: true|
-|user_id|integer|foreign_key: true|
+|group|references|foreign_key: true|
+|user|references|foreign_key: true|
 
 ### Association
 - belongs_to :group
