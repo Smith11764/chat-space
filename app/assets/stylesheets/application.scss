@@ -3,6 +3,7 @@
 @import "modules/user";
 @import "config/colors";
 @import "modules/flash";
+@import "modules/group";
 
 .wrapper {
   height: 100vh;
@@ -52,9 +53,11 @@
         &__group-name {
           margin-bottom: 5px;
           font-size: 15px;
+          color: white;
           }
-          &__latest-message {
+        &__latest-message {
             font-size: 11px;
+            color: white;
           }
       }
   }
