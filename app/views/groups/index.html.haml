@@ -1,43 +1,56 @@
-.wrapper
-  .chat-side
-    .side-header
-      .side-header__box
-        %p.side-header__box__user-name
-          = current_user.name
-        %ul.side-header__box__menu
-          %li.side-header__box__menu__edit-user
-            = link_to new_group_path do
-              = fa_icon 'pencil-square-o', class: 'icon'
-          %li.side-header__box__menu__new-group
-            = link_to edit_user_path(current_user) do
-              = fa_icon 'cog', class: 'icon'
-    .groups
-      - current_user.groups.each do |group|
-        .group
-          = link_to group_messages_path(group) do
-            .group__group-name
-              =group.name
-            .group__latest-message
-              メッセージはまだありません。
-  .chat-main
-    .main-header
-      .main-header__left-contents
-        %h2.main-header__left-contents__group
-          グループA
-        %ul.main-header__left-contents__members
-          Member：
-          %li.member karimen
-      .main-header__right-contents
-        %a{:href => ""}
-          .main-header__right-contents__edit-btn Edit
-    .messages__lists
-      .messages__lists__list
-        %p.messages__lists__list__commenter karimenn
-        %p.messages__lists__list__date 2019/2/20
-        %p.messages__lists__list__message 投稿内容
-    .submit__content
-      .submit__content__new
-        .input-text type a message
-        .input-img
-          %i.fa.fa-image
-      .submit__content__btn Send
+/ .wrapper
+
+/   = render 'shared/side_bar'
+
+/   .chat
+/     .header
+/       .left-header
+/         .left-header__title
+/           グループ名
+/         %ul.left-header__members
+/           Member：
+/           %li.member
+/             メンバー名
+/           %li.member
+/             メンバー名
+/           %li.member
+/             メンバー名
+/       .right-header
+/         .right-header__button
+/           Edit
+/     .messages
+/       .message
+/         .upper-message
+/           .upper-message__user-name
+/             メンバー
+/           .upper-message__date
+/             2017/04/04
+/         .lower-meesage
+/           .lower-message__content
+/             メッセージ
+/       .message
+/         .upper-message
+/           .upper-message__user-name
+/             メンバー
+/           .upper-message__date
+/             2017/04/04
+/         .lower-meesage
+/           .lower-message__content
+/             メッセージ
+/       .message
+/         .upper-message
+/           .upper-message__user-name
+/             メンバー
+/           .upper-message__date
+/             2017/04/04
+/         .lower-meesage
+/           .lower-message__content
+/             メッセージ
+/     .form
+/       %form
+/         %input.form__message
+/         .form__mask
+/           %label.form__mask__image
+/             = fa_icon 'picture-o', class: 'icon'
+/             %input.hidden{type: 'file'}
+/         %input.form__submit{type: 'submit', value: 'Send'}
